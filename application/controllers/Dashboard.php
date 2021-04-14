@@ -25,8 +25,15 @@ class Dashboard extends Render_Controller
 		$this->breadcrumb_1 			= 'Dashboard';
 		$this->breadcrumb_1_url 		= '#';
 
+		$this->data['pusat'] = $this->dashbrd->getData();
+
 		// Send data to view
 		$this->render();
+	}
+
+	public function tes()
+	{
+		$this->dashbrd->getData();
 	}
 
 
@@ -40,6 +47,9 @@ class Dashboard extends Render_Controller
 
 		// Cek session
 		$this->sesion->cek_session();
+
+		// model
+		$this->load->model("DashboardModel", 'dashbrd');
 	}
 }
 

@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -55,3 +55,6 @@ $route['translate_uri_dashes'] = TRUE;
 
 $route['javascripts/(:any).js'] = 'loader/javascripts/$1';
 $route['stylesheets/(:any).css'] = 'loader/stylesheets/$1';
+
+// cetak rab
+// cabang 

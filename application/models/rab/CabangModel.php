@@ -1,25 +1,27 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class CabangModel extends Render_Model {
+class CabangModel extends Render_Model
+{
 
-	
-	public function getAllData($show=null, $start=null, $cari=null){
 
-		if($this->session->userdata('data')['level'] == 'Super Admin'){
+	public function getAllData($show = null, $start = null, $cari = null)
+	{
+
+		if ($this->session->userdata('data')['level'] == 'Super Admin') {
 			$where = array();
-		}elseif($this->session->userdata('data')['level'] == 'Admin Sekolah'){
+		} elseif ($this->session->userdata('data')['level'] == 'Admin Sekolah') {
 			$where = array(
-				'b.user_id' => $this->session->userdata('data')['id'] 
+				'b.user_id' => $this->session->userdata('data')['id']
 			);
 		}
 
 		$exe 				 = $this->db->select(' * ,b.nama as nama_cabang, a.nama as nama_aktifitas, a.status as statuss, a.kode as kodes')
-									->from(' rabs a')
-									->join(' cabangs b', ' a.id_cabang = b.id ', ' left ')
-									->join(' aktifitas c', ' a.id_aktifitas = c.id ', ' left ')
-									->where($where)
-									->get();
+			->from(' rabs a')
+			->join(' cabangs b', ' a.id_cabang = b.id ', ' left ')
+			->join(' aktifitas c', ' a.id_aktifitas = c.id ', ' left ')
+			->where($where)
+			->get();
 
 		return $exe;
 	}
@@ -39,7 +41,7 @@ class CabangModel extends Render_Model {
 		return $exe->result_array();
 	}
 
-	public function insert($id_cabang, $id_aktifitas, $id_aktifitas_sub, $id_aktifitas_cabang, $kode_isi_1=0, $kode_isi_2=0, $kode_isi_3=0, $kode, $nama, $jumlah_1, $satuan_1, $jumlah_2, $satuan_2, $jumlah_3, $satuan_3, $jumlah_4, $satuan_4, $harga_ringgit, $harga_rupiah, $total_harga_ringgit, $total_harga_rupiah, $prioritas, $status)
+	public function insert($id_cabang, $id_aktifitas, $id_aktifitas_sub, $id_aktifitas_cabang, $kode_isi_1 = 0, $kode_isi_2 = 0, $kode_isi_3 = 0, $kode, $nama, $jumlah_1, $satuan_1, $jumlah_2, $satuan_2, $jumlah_3, $satuan_3, $jumlah_4, $satuan_4, $harga_ringgit, $harga_rupiah, $total_harga_ringgit, $total_harga_rupiah, $prioritas, $status)
 	{
 
 		$data['id_cabang']			= $id_cabang;
@@ -59,7 +61,7 @@ class CabangModel extends Render_Model {
 		$data['satuan_4'] 			= $satuan_4;
 		$data['harga_ringgit'] 		= $harga_ringgit;
 		$data['harga_rupiah']		= $harga_rupiah;
-		$data['total_harga_ringgit']= $total_harga_ringgit;
+		$data['total_harga_ringgit'] = $total_harga_ringgit;
 		$data['total_harga_rupiah']	= $total_harga_rupiah;
 		$data['prioritas']			= $prioritas;
 		$data['status']				= $status;
@@ -84,7 +86,7 @@ class CabangModel extends Render_Model {
 		$data['harga_ringgit'] 		= $harga_ringgit;
 		$data['harga_rupiah']		= $harga_rupiah;
 		$data['jumlah'] 			= $jumlah;
-		$data['total_harga_ringgit']= $total_harga_ringgit;
+		$data['total_harga_ringgit'] = $total_harga_ringgit;
 		$data['total_harga_rupiah']	= $total_harga_rupiah;
 		$data['prioritas']			= $prioritas;
 		$data['status']				= $status;
@@ -106,11 +108,11 @@ class CabangModel extends Render_Model {
 
 	public function getCabang()
 	{
-		if($this->session->userdata('data')['level'] == 'Super Admin'){
+		if ($this->session->userdata('data')['level'] == 'Super Admin') {
 			$where = array();
-		}elseif($this->session->userdata('data')['level'] == 'Admin Sekolah'){
+		} elseif ($this->session->userdata('data')['level'] == 'Admin Sekolah') {
 			$where = array(
-				'user_id' => $this->session->userdata('data')['id'] 
+				'user_id' => $this->session->userdata('data')['id']
 			);
 		}
 		$exe 						= $this->db->get_where('cabangs', $where);
@@ -119,28 +121,28 @@ class CabangModel extends Render_Model {
 
 	public function getAktifitas()
 	{
-		$exe 						= $this->db->get_where('aktifitas',['id_pengkodeans' => 0]);
+		$exe 						= $this->db->get_where('aktifitas', ['id_pengkodeans' => 0]);
 		return $exe->result_array();
 	}
 
 	public function getAktifitasSub($id_aktifitas)
 	{
-		$exe 						= $this->db->get_where('aktifitas',['id_pengkodeans' => $id_aktifitas]);
+		$exe 						= $this->db->get_where('aktifitas', ['id_pengkodeans' => $id_aktifitas]);
 		return $exe->result_array();
 	}
 
 	public function getAktifitasCabang($id_aktifitas_sub)
 	{
-		if($this->session->userdata('data')['level'] == 'Super Admin'){
+		if ($this->session->userdata('data')['level'] == 'Super Admin') {
 			$where = array(
 				'a.id_aktifitas' 	=> $id_aktifitas_sub,
 				'a.kode_isi_1'		=> 0
 			);
-		}elseif($this->session->userdata('data')['level'] == 'Admin Sekolah'){
+		} elseif ($this->session->userdata('data')['level'] == 'Admin Sekolah') {
 			$where = array(
 				'a.id_aktifitas' 	=> $id_aktifitas_sub,
 				'a.kode_isi_1'		=> 0,
-				'b.user_id' => $this->session->userdata('data')['id'] 
+				'b.user_id' => $this->session->userdata('data')['id']
 			);
 		}
 		$exe 						= $this->db->select('a.*')->join('cabangs b', 'b.id = a.id_cabang')->get_where('rabs a', $where);
@@ -149,43 +151,43 @@ class CabangModel extends Render_Model {
 
 	public function getAktifitasCabangKodeIsi1($id_aktifitas_cabang)
 	{
-		if($this->session->userdata('data')['level'] == 'Super Admin'){
+		if ($this->session->userdata('data')['level'] == 'Super Admin') {
 			$where = array(
 				'a.kode_isi_1' 		=> $id_aktifitas_cabang,
 				'a.kode_isi_2'		=> 0
 			);
-		}elseif($this->session->userdata('data')['level'] == 'Admin Sekolah'){
+		} elseif ($this->session->userdata('data')['level'] == 'Admin Sekolah') {
 			$where = array(
 				'a.kode_isi_1' 		=> $id_aktifitas_cabang,
 				'a.kode_isi_2'		=> 0,
-				'b.user_id' => $this->session->userdata('data')['id'] 
+				'b.user_id' => $this->session->userdata('data')['id']
 			);
 		}
-		$exe 						= $this->db->select('a.*')->join('cabangs b', 'b.id = a.id_cabang')->get_where('rabs a',$where);
+		$exe 						= $this->db->select('a.*')->join('cabangs b', 'b.id = a.id_cabang')->get_where('rabs a', $where);
 		return $exe->result_array();
 	}
 
 	public function getAktifitasCabangKodeIsi2($kode_isi_1)
 	{
-		if($this->session->userdata('data')['level'] == 'Super Admin'){
+		if ($this->session->userdata('data')['level'] == 'Super Admin') {
 			$where = array(
 				'a.kode_isi_2' 		=> $kode_isi_1,
 				'a.kode_isi_3'		=> 0
 			);
-		}elseif($this->session->userdata('data')['level'] == 'Admin Sekolah'){
+		} elseif ($this->session->userdata('data')['level'] == 'Admin Sekolah') {
 			$where = array(
 				'a.kode_isi_2' 		=> $kode_isi_1,
 				'a.kode_isi_3'		=> 0,
-				'b.user_id' => $this->session->userdata('data')['id'] 
+				'b.user_id' => $this->session->userdata('data')['id']
 			);
 		}
-		$exe 						= $this->db->select('a.*')->join('cabangs b', 'b.id = a.id_cabang')->get_where('rabs a',$where);
+		$exe 						= $this->db->select('a.*')->join('cabangs b', 'b.id = a.id_cabang')->get_where('rabs a', $where);
 		return $exe->result_array();
 	}
 
 	public function getAktifitasCabangKodeIsi3($kode_isi_2)
 	{
-		$exe 						= $this->db->get_where('rabs',['kode_isi_3' => $kode_isi_2]);
+		$exe 						= $this->db->get_where('rabs', ['kode_isi_3' => $kode_isi_2]);
 		return $exe->result_array();
 	}
 }

@@ -50,7 +50,7 @@
 													</a>
 												</h5>
 												<p class="price-container">
-													<span>20</span>
+													<span><?= $pusat['jml'] ?></span>
 												</p>
 											</div>
 										</div>
@@ -151,6 +151,8 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- profile -->
 					<div class="col-lg-4">
 						<div class="product-content product-wrap clearfix" style="height: 394px;">
 							<div class="row">
@@ -167,7 +169,7 @@
 												</td>
 												<td style="width: 5%;">:</td>
 												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
+													<h5 class="name" style="font-size: 14px;"><b><?= $pusat['profile']['kode']; ?></b></h5>
 												</td>
 											</tr>
 											<tr>
@@ -176,7 +178,7 @@
 												</td>
 												<td style="width: 5%;">:</td>
 												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
+													<h5 class="name" style="font-size: 14px;"><b><?= $pusat['profile']['nama']; ?></b></h5>
 												</td>
 											</tr>
 											<tr>
@@ -185,7 +187,7 @@
 												</td>
 												<td style="width: 5%;">:</td>
 												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
+													<h5 class="name" style="font-size: 14px;"><b><?= $pusat['profile']['no_telpon']; ?></b></h5>
 												</td>
 											</tr>
 											<tr>
@@ -194,70 +196,7 @@
 												</td>
 												<td style="width: 5%;">:</td>
 												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
-												</td>
-											</tr>
-											<tr>
-												<td style="width: 25%;">
-													<h5 class="name" style="font-size: 12px;">Kelas 7</h5>
-												</td>
-												<td style="width: 5%;">:</td>
-												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
-												</td>
-											</tr>
-											<tr>
-												<td style="width: 25%;">
-													<h5 class="name" style="font-size: 12px;">Kelas 8</h5>
-												</td>
-												<td style="width: 5%;">:</td>
-												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
-												</td>
-											</tr>
-											<tr>
-												<td style="width: 25%;">
-													<h5 class="name" style="font-size: 12px;">Kelas 9</h5>
-												</td>
-												<td style="width: 5%;">:</td>
-												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
-												</td>
-											</tr>
-											<tr>
-												<td style="width: 25%;">
-													<h5 class="name" style="font-size: 12px;">Jumlah Siswa</h5>
-												</td>
-												<td style="width: 5%;">:</td>
-												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
-												</td>
-											</tr>
-											<tr>
-												<td style="width: 25%;">
-													<h5 class="name" style="font-size: 12px;">Guru Bina</h5>
-												</td>
-												<td style="width: 5%;">:</td>
-												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
-												</td>
-											</tr>
-											<tr>
-												<td style="width: 25%;">
-													<h5 class="name" style="font-size: 12px;">Guru Pamong</h5>
-												</td>
-												<td style="width: 5%;">:</td>
-												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
-												</td>
-											</tr>
-											<tr>
-												<td style="width: 25%;">
-													<h5 class="name" style="font-size: 12px;">Jumlah Guru</h5>
-												</td>
-												<td style="width: 5%;">:</td>
-												<td>
-													<h5 class="name" style="font-size: 14px;"><b></b></h5>
+													<h5 class="name" style="font-size: 14px;"><b><?= $pusat['profile']['alamat']; ?></b></h5>
 												</td>
 											</tr>
 										</table>

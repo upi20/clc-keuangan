@@ -1,68 +1,67 @@
-
 <div id="content">
 
 	<!-- row -->
 	<div class="row">
-		
+
 		<!-- col -->
 		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 			<h1 class="page-title txt-color-blueDark">
 				<!-- PAGE HEADER -->
-				<i class="fa-fw fa fa-table"></i> 
-				
+				<i class="fa-fw fa fa-table"></i>
+
 				<?= $title ?>
 			</h1>
 		</div>
 		<!-- end col -->
-		
+
 	</div>
 	<!-- end row -->
-	
+
 	<!--
 		The ID "widget-grid" will start to initialize all widgets below 
 		You do not need to use widgets if you dont want to. Simply remove 
 		the <section></section> and you can use wells or panels instead 
 		-->
-	
+
 	<!-- widget grid -->
 	<section id="widget-grid" class="">
-	
+
 		<!-- row -->
 		<div class="row">
-			
+
 			<!-- NEW WIDGET START -->
 			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				
+
 				<!-- Widget ID (each widget will need unique ID)-->
-				<div class="jarviswidget" id="wid-id-0"
-					data-widget-colorbutton="false"
-					data-widget-editbutton="false"
-					data-widget-deletebutton="false">
+				<div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-deletebutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-table"></i> </span>
 					</header>
-	
+
 					<!-- widget div-->
 					<div>
-						
+
 						<!-- widget edit box -->
 						<div class="jarviswidget-editbox">
 							<!-- This area used as dropdown edit box -->
-							<input class="form-control" type="text">	
+							<input class="form-control" type="text">
 						</div>
 						<!-- end widget edit box -->
-						
+
 						<!-- widget content -->
 						<div class="widget-body">
 
 							<div class="pull-right">
-								<button class="btn btn-success btn-sm" id="tambah">
+								<button class="btn btn-primary btn-sm" id="tambah">
 									<i class="fa fa-plus"></i> Tambah
 								</button>
+								<a href="<?= base_url(); ?>rab/cabang/cetakexcel" class="btn btn-success btn-sm" id="tambah">
+									<i class="fa fa-file-excel-o"></i> Cetak Excel
+								</a>
 							</div>
-				
+
 							<table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
-								<thead>			                
+								<thead>
 									<tr>
 										<th> Cabang</th>
 										<th> Aktifitas</th>
@@ -85,37 +84,37 @@
 										<th> Aksi</th>
 									</tr>
 								</thead>
-								
-							</table>	
+
+							</table>
 						</div>
 						<!-- end widget content -->
-						
+
 					</div>
 					<!-- end widget div -->
-					
+
 				</div>
 				<!-- end widget -->
-	
+
 			</article>
 			<!-- WIDGET END -->
-			
+
 		</div>
-	
+
 		<!-- end row -->
-	
+
 		<!-- row -->
-	
+
 		<div class="row">
-	
+
 			<!-- a blank row to get started -->
 			<div class="col-sm-12">
 				<!-- your contents here -->
 			</div>
-				
+
 		</div>
-	
+
 		<!-- end row -->
-	
+
 	</section>
 	<!-- end widget grid -->
 
@@ -166,22 +165,22 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-md-2" >
+								<div class="col-md-2">
 								</div>
-								<div class="col-md-10" >
+								<div class="col-md-10">
 									<div class="form-group">
 										<label for="nama"> Sub Aktifitas</label>
 										<select class="form-control" id="id_aktifitas_cabang">
 										</select>
 									</div>
 								</div>
-								<div class="col-md-3" >
+								<div class="col-md-3">
 								</div>
 								<div class="col-md-9">
 									<div class="form-group">
 										<label for="nama"> Sub Aktifitas</label>
 										<select class="form-control" id="kode_isi_1">
-											
+
 										</select>
 									</div>
 								</div>
@@ -191,7 +190,7 @@
 									<div class="form-group">
 										<label for="nama"> Sub Aktifitas</label>
 										<select class="form-control" id="kode_isi_2">
-											
+
 										</select>
 									</div>
 								</div>
@@ -201,7 +200,7 @@
 								<div class="col-md-12">
 									<div class="form-group">
 										<label for="nama"> Kode</label>
-										<input type="text" class="form-control" id="kode" placeholder="" required/>
+										<input type="text" class="form-control" id="kode" placeholder="" required />
 									</div>
 								</div>
 							</div>
@@ -283,7 +282,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="nama"> Satuan</label>
-										<input type="text" class="form-control" id="satuan_4"placeholder="" />
+										<input type="text" class="form-control" id="satuan_4" placeholder="" />
 									</div>
 								</div>
 							</div>
@@ -313,10 +312,10 @@
 						</div>
 					</div>
 
-					
 
-							
-					
+
+
+
 				</div>
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-primary">
@@ -337,4 +336,3 @@ Proses : 0
 Di ajukan : 1
 Diterima : 2
 Ditolak : 3 -->
-
